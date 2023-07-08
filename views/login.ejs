@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>I.I.S || Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <link rel="stylesheet" href="stylesheets/stylelogin.css">
+  </head>
+
+  <body>
+    <section class="user">
+      <div class="user_options-container">
+        <div class="user_options-text">
+          <div class="user_options-unregistered">
+            <h2 class="user_registered-title">Inmate Information System</h2>
+            <button class="user_unregistered-signup" id="signup-button">For Admin</button>
+          </div>
+    
+          <div class="user_options-registered">
+            <h2 class="user_registered-title">Inmate Information System</h2>
+            <button class="user_registered-login" id="login-button">For Visitor</button>
+          </div>
+        </div>
+        
+        <div class="user_options-forms" id="user_options-forms">
+          <div class="user_forms-login">
+            <h2 class="forms_title">Visitor</h2>
+            <form class="forms_form" action="/visitlog" method="post">
+              <fieldset class="forms_fieldset">
+                <div class="forms_field">
+                  <input type="email" name="email_visitor" placeholder="Email" class="forms_field-input" required autofocus />
+                </div>
+                <div class="forms_field">
+                  <input type="password" name="password_visitor" placeholder="Password" class="forms_field-input" required />
+                </div>
+              </fieldset>
+              <div class="forms_buttons">
+                <input type="submit" value="Login" class="forms_buttons-action">
+              </div>
+            </form>
+          </div>
+          <div class="user_forms-signup">
+            <h2 class="forms_title">Admin</h2>
+            <form class="forms_form" action="/adminlog" method="post">
+              <fieldset class="forms_fieldset">
+                <div class="forms_field">
+                  <input type="email" name="email_admin" placeholder="Email" class="forms_field-input" required autofocus />
+                </div>
+                <div class="forms_field">
+                  <input type="password" name="password_admin" placeholder="Password" class="forms_field-input" required />
+                </div>
+              </fieldset>
+              <div class="forms_buttons">
+                <input type="submit" id="submit" value="Login" class="forms_buttons-action">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  
+  <script src="javascripts/script.js"></script>
+
+</html>

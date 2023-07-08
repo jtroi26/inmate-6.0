@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>I.I.S || View Inmate</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styleindex.css">
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+
+        <a class="navbar-brand ps-3 " href="/index">Inmate Information System</a>
+
+        <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Category</div>
+                        <a class="nav-link" href="/index">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <a class="nav-link" href="charts.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Charts
+                        </a>
+                        <a class="nav-link" href="tables.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Tables
+                        </a>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Insert Data
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/addinmate">Add Inmate</a>
+                                <a class="nav-link" href="/visitreg">Visitor</a>
+                                <a class="nav-link" href="/adminreg">Admin</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h3 class="mt-2">View Inmate</h3>
+                </div>
+                <div class="container container-sm mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="form">
+                                <h4 class="text-center">Inmate Details</h4>
+                                <hr class="line">
+                                <div class="row">
+
+                                    <div class="col-md-2 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="inmateNo">Inmate No.</label>
+                                            <input type="text" id="inmateNo" name="inmateNo"
+                                                class="form-control form-control-sm" value="<%= inmate.inmateNo%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="cellBlock">Cellblock No.</label>
+                                            <input type="text" id="cellBlock" name="cellBlock"
+                                                class="form-control form-control-sm" value="<%= inmate.cellBlock%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="lastName">Last Name</label>
+                                            <input type="text" id="lastname" name="lastname"
+                                                class="form-control form-control-sm" value="<%= inmate.lastname%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="firstName">First Name</label>
+                                            <input type="text" id="firstname" name="firstname"
+                                                class="form-control form-control-sm" value="<%= inmate.firstname%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="midName">Middle Name</label>
+                                            <input type="text" id="middlename" name="middlename"
+                                                class="form-control form-control-sm" value="<%= inmate.middlename%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-1">
+                                        <div class="form-group">
+                                            <label class="form-label" for="suffix">Suffix</label>
+                                            <input type="text" id="suffix" name="suffix"
+                                                class="form-control form-control-sm" value="<%= inmate.suffix%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="perAdd">Permanent Address</label>
+                                            <input type="text" id="perAdd" name="perAdd"
+                                                class="form-control form-control-sm" value="<%= inmate.perAdd%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="gender">Gender</label>
+                                            <input type="text" id="gender" name="gender"
+                                                class="form-control form-control-sm" value="<%= inmate.gender%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="bday">Birthday</label>
+                                            <input type="date" id="bday" name="bday"
+                                                class="form-control form-control-sm" value="<%= inmate.bday%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="civilstatus">Civil Status</label>
+                                            <input type="text" id="civilstatus" name="civilstatus"
+                                                class="form-control form-control-sm" value="<%= inmate.civilstatus%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="eyeColor">Eye Color</label>
+                                            <input type="text" id="eyeColor" name="eyeColor"
+                                                class="form-control form-control-sm" value="<%= inmate.eyeColor%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="line">
+                                <h4 class="text-center">Case Details</h4>
+                                <hr class="line">
+                                <div class="row">
+                                    <div class="col-md-6 mb-2 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="crimeCom">Crime Commited</label>
+                                            <input type="text" id="crimeCom" name="crimeCom"
+                                                class="form-control form-control-sm" value="<%= inmate.crimeCom%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-2 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="sentence">Sentence</label>
+                                            <input type="text" id="sentence" name="sentence"
+                                                class="form-control form-control-sm" value="<%= inmate.sentence%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="dateStart">Date Serve Started</label>
+                                            <input type="date" id="dateStart" name="dateStart"
+                                                class="form-control form-control-sm" value="<%= inmate.dateStart%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="dateEnd">Date Serve Ends</label>
+                                            <input type="date" id="dateEnd" name="dateEnd"
+                                                class="form-control form-control-sm" value="<%= inmate.dateEnd%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="line">
+                                <h4 class="text-center">Emergency Details</h4>
+                                <hr class="line">
+                                <div class="row">
+                                    <div class="col-md-3 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="elastname">Last Name</label>
+                                            <input type="text" id="elastname" name="elastname"
+                                                class="form-control form-control-sm" value="<%= inmate.elastname%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="efirstname">First Name</label>
+                                            <input type="text" id="efirstname" name="efirstname"
+                                                class="form-control form-control-sm" value="<%= inmate.efirstname%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="emiddlename">Middle Name</label>
+                                            <input type="text" id="emiddlename" name="emiddlename"
+                                                class="form-control form-control-sm" value="<%= inmate.emiddlename%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-1">
+                                        <div class="form-group">
+                                            <label class="form-label" for="esuffix">Suffix</label>
+                                            <input type="text" id="esuffix" name="esuffix"
+                                                class="form-control form-control-sm" value="<%= inmate.esuffix%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="eperAdd">Permanent Address</label>
+                                            <input type="text" id="eperAdd" name="eperAdd"
+                                                class="form-control form-control-sm" value="<%= inmate.eperAdd%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-1">
+                                        <div class="form-group">
+                                            <label class="form-label" for="relationship">Relationship</label>
+                                            <input type="text" id="relationship" name="relationship"
+                                                class="form-control form-control-sm" value="<%= inmate.relationship%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-1">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="contact">Contact</label>
+                                            <input type="text" id="contact" name="contact"
+                                                class="form-control form-control-sm" value="<%= inmate.contact%>"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2 col-3 mx-auto">
+                                    <a type="button" class="btn btn-primary mt-3" href="/index">Go Back</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </main>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
+    <script src="javascripts/script.js"></script>
+    <script src="javascripts/datatables.js"></script>
+</body>
+
+</html>

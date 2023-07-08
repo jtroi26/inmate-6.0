@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+model Admin {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  email_admin    String    @unique
+  password_admin   String?
+  createdAt         DateTime  @default(now())
+  shift      Int
+}
+model Visitor {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  email_visitor    String    @unique
+  password_visitor  String?
+  createdAt         DateTime  @default(now())
+  shift    Int
+}
+model InmateRecord {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  inmateNo     String?
+  cellBlock    String?
+  lastname     String?
+  firstname    String?
+  middlename   String?
+  suffix       String?
+  perAdd       String?
+  gender       String?
+  bday         String?
+  civilstatus  String?
+  eyeColor     String?
+  crimeCom     String?
+  sentence     String?
+  dateStart    String?
+  dateEnd      String?
+  elastname    String?
+  efirstname   String?
+  emiddlename   String?
+  esuffix      String?
+  eperAdd      String?
+  relationship String?
+  contact      String?
+}
+model VisitSched {
+  //inmate details
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  inmateNo      String?
+  cellBlock     String?
+  lastname      String?
+  firstname     String?
+  middlename    String?
+  suffix        String?
+  gender        String?
+  bday          String?
+  // visitor details
+  inmate_to_visit_id String?
+  vlastname     String?
+  vfirstname    String?
+  vmiddlename   String?
+  vsuffix       String?
+  vperAdd       String?
+  timeVisit     String?
+  dateVisit     String?
+  relationship  String?
+  contact       String?
+}
+
+// "mongodb+srv://mmcramos:marcramos15@cluster0.zf5zomy.mongodb.net/InmateInformationSystem"
